@@ -65,22 +65,29 @@ public class CharacterUtilities {
         }
         return array;
     }
-    public static char[] concatenationOf(char[] arrayA, char[] arrayB){
+    /*public static char[] concatenationOf(char[] arrayA, char[] arrayB){
         char[] concatArray = new char[arrayA.length + arrayB.length];
         System.arraycopy(arrayA, 0, concatArray, 0, arrayA.length);
         System.arraycopy(arrayB, 0, concatArray, arrayA.length, arrayB.length);
         return concatArray;
-    }
-    public static char[] copyOfPartOf(char[] array, int index1, int index2){
-        int indexO = index1;
-        int indexI = 0;
-        while (indexO != index2){
-            indexO++;
-            indexI++;
+    }*/
+    public static char[] concatenationOf(char[] arrayA, char[] arrayB){
+        char[] concatArray = new char[arrayA.length + arrayB.length];
+        int o = 0;
+        for (int i = 0; i < arrayA.length;i++){
+            concatArray[o] = arrayA[i];
+            o++;
         }
-        char[] result = new char[indexI];
-        for (int i = index1; index1 <= index2; i++ ){
-            int o = 0;
+        for (int i = 0; i < arrayB.length;i++){
+            concatArray[o] = arrayB[i];
+            o++;
+        }
+        return concatArray;
+    }
+    public static char[] copyOfPartOf(char[] array, int indexStart, int indexEnd){
+        char[] result = new char[indexEnd - indexStart + 1];
+        int o = 0;
+        for (int i = indexStart; i <= indexEnd; i++){
             result[o] = array[i];
             o++;
         }
