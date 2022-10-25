@@ -1,5 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        System.out.println(CaesarCipherDecipherer.decipher(""));
+        Point p0 = new Point(2,3);
     }
 }
