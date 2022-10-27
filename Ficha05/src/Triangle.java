@@ -24,14 +24,20 @@ public class Triangle {
         return c;
     }
 
-    public void setA(Point value) {
-        a = value;
+    public void setA(Point a) {
+        this.a = a;
     }
-    public void setB(Point value) { b = value; }
-    public void setC(Point value) { c = value; }
+    public void setB(Point b) { this.b = b; }
+    public void setC(Point c) { this.c = c; }
 
 
-    /*public double areaTriangle(){
-        double areaTriangleA = this
-    }*/
+    public double compBase(){
+        return a.distanceTo(b);
+    }
+    public double compAlt(){
+        return a.distanceTo(c);
+    }
+    public double areaTr(){
+        return (compBase()*compAlt())/2;
+    }
 }
