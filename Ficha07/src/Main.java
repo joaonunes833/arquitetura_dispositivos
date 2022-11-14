@@ -53,21 +53,21 @@ public class Main {
 //        studentList.add(s3);
 //        Collections.sort(studentList, new StudentsComparatorByName());
 //        System.out.println(studentList.toString());
-        Map<String, Course> courseMap = new HashMap<String, Course>();
+        Map<Integer, Course> courseMap = new HashMap<Integer, Course>();
         Course c1 = new Course(1,"Disciplina1",5,1);
         Course c2 = new Course(2,"Disciplina2",5,1);
         Course c3 = new Course(3,"Disciplina3",5,1);
         Course c4 = new Course(4,"Disciplina4",5,1);
-        courseMap.put(c3.getName(),c3);
-        courseMap.put(c4.getName(),c4);
-        courseMap.put(c1.getName(),c1);
-        courseMap.put(c2.getName(),c2);
-        if (courseMap.containsKey("Disciplina3")) {
-            Course cc = courseMap.get("Disciplina3");
+        courseMap.put(c3.getCode(),c3);
+        courseMap.put(c4.getCode(),c4);
+        courseMap.put(c1.getCode(),c1);
+        courseMap.put(c2.getCode(),c2);
+        if (courseMap.containsValue(3)) {
+            Course cc = courseMap.get(3);
         }
 
-        Set<String> keys = courseMap.keySet();
-        for (String key : keys) {
+        Set<Integer> keys = courseMap.keySet();
+        for (int key : keys) {
             System.out.print("\nKey: " + key);
             System.out.print(", Values: " + courseMap.get(key));
 
