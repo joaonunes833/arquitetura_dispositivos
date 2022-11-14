@@ -54,10 +54,10 @@ public class Main {
 //        Collections.sort(studentList, new StudentsComparatorByName());
 //        System.out.println(studentList.toString());
         Map<Integer, Course> courseMap = new HashMap<Integer, Course>();
-        Course c1 = new Course(1,"Disciplina1",5,1);
-        Course c2 = new Course(2,"Disciplina2",5,1);
-        Course c3 = new Course(3,"Disciplina3",5,1);
-        Course c4 = new Course(4,"Disciplina4",5,1);
+        Course c1 = new Course(1,"Disciplina1",5,2000);
+        Course c2 = new Course(2,"Disciplina2",5,2000);
+        Course c3 = new Course(3,"Disciplina3",5,2002);
+        Course c4 = new Course(4,"Disciplina4",5,2001);
         courseMap.put(c3.getCode(),c3);
         courseMap.put(c4.getCode(),c4);
         courseMap.put(c1.getCode(),c1);
@@ -72,12 +72,34 @@ public class Main {
             System.out.print(", Values: " + courseMap.get(key));
 
         }
-        Collection<Course> stadiumSet = courseMap.values();
+        Collection<Course> courseSet = courseMap.values();
 
-        List<Course> ano1 = new ArrayList<Course>();
-        ano1.add(c1);
-        ano1.add(c3);
-        ano1.add(c4);
-        ano1.add(c2);
+        List<Integer> yearList = new ArrayList<Integer>();
+
+        for (Course course: courseMap.values()){
+            if (!yearList.contains(course.getAno())){
+                yearList.add(course.getAno());
+            }
+        }
+        System.out.println(yearList);
+
+        List<ArrayList<Course>> courseByYear = new ArrayList<ArrayList<Course>>();
+
+        for (int ano: yearList){
+            ArrayList<Course> list = new ArrayList<Course>();
+            for (Course course: courseMap.values()){
+                if (ano == course.getAno()){
+                    list.add(course);
+                }
+            }
+            courseByYear.add(list);
+        }
+
+        for (ArrayList<Course> list: courseByYear){
+            for (Course course: list){
+                System.out.println(course);
+            }
+        }
+        Collections.sort(yearList);
     }
 }
