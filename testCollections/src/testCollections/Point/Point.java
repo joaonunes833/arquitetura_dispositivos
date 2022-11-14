@@ -1,6 +1,6 @@
 package testCollections.Point;
 
-public class Point {
+public class Point implements Comparable<Point>{
     private double x;
     private double y;
 
@@ -48,5 +48,14 @@ public class Point {
             return true;
         else
             return false;
+    }
+
+    @Override
+    public int compareTo(Point o){
+        //crescente
+        int diff = (int)((this.x - o.x) + (this.y - o.y));
+        //decrescente
+        //int diff = (int)((o.x - this.x ) + (o.y - this.y));
+        return diff;
     }
 }

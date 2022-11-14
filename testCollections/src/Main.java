@@ -33,4 +33,19 @@ public class Main {
         Point pm = map.get("Point2");
 
     }
+    ////// Comparable ///
+    //
+    //implements
+    //- compare to
+    // - o (==), >o (a>b), <o (a<b)
+    //
+    //comparação por omissão de um tipo
+
+    // // Comparator //
+    //
+    //implements
+    //-compare
+    // - o (==), >o (a>b), <o (a<b)
+    //
+    //forma adicional de comparação
 }
